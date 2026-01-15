@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gửi Mit 💖</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      overflow: hidden;
+    }
+    h1 { color: #d6336c; font-size: 36px; }
+    p { font-size: 20px; color: #444; margin: 20px; }
+
+    button {
+      background: #ff4d6d;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+
+    .heart {
+      position: fixed;
+      font-size: 20px;
+      animation: fall 4s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10vh); opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Gửi Mit 💗</h1>
+<p>
+  Có thể Mit không biết…<br>
+  Nhưng mỗi ngày trôi qua,<br>
+  tớ đều nghĩ đến Mit nhiều hơn một chút.<br><br>
+  Mit có muốn ở bên tớ không?
+</p>
+
+<button onclick="playMusic()">💘 Tớ đồng ý 💘</button>
+
+<audio id="music" loop>
+  <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Komiku/Its_time_for_adventure/Komiku_-_12_-_Love.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+  document.getElementById("music").play();
+  alert("Tớ vui lắm đó Mit ơi 💖");
+}
+
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 4000);
+}, 300);
+</script>
+
+</body>
+</html>
